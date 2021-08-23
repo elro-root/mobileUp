@@ -34,6 +34,10 @@ class MainViewController: UICollectionViewController {
     }
     
     @IBAction func exit(_ sender: Any) {
+        VK.sessions.default.logOut()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(LoginViewController)
     }
     
     // MARK: UICollectionViewDataSource
