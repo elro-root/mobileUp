@@ -62,7 +62,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func setRootViewController(_ vc: UIViewController) {
-        window?.rootViewController = vc
+        if let window = self.window {
+            window.rootViewController = vc
+            UIView.transition(with: window,
+                              duration: 0.5,
+                              options: .transitionCrossDissolve,
+                              animations: nil)}
     }
 }
 
