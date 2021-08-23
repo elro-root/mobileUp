@@ -22,19 +22,20 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        VK.sessions.default.logIn { _ in
-            print("all good")
-        } onError: { error in
-            print(error)
-            print(VK.sessions.default.state)
-//            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-//                NSLog("The \"OK\" alert occured.")
-//            }))
-//            self.present(alert, animated: true, completion: nil)
-        }
-        
+        VK.sessions.default.logIn(
+            onSuccess: { _ in
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                DispatchQueue.main.async {
+                    let viewController = storyboard.instantiateViewController(identifier: "main") as! UINavigationController
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(viewController)
+                }
+            }, onError: { error in
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        )
     }
-    
 }
-

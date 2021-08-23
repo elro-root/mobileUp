@@ -5,7 +5,7 @@ target 'mobileUp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   # Pods for mobileUp
-  pod 'NotificationBannerSwift'
-  pod 'SwiftyJSON'
+  pod 'NotificationBannerSwift', :inhibit_warnings => true
+  pod 'SwiftyJSON', :inhibit_warnings => true
   pod 'SwiftyVK', :inhibit_warnings => true
 end

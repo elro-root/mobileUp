@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,10 +18,14 @@
 		3082F94726D1EA6D00F37ABD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3082F94626D1EA6D00F37ABD /* DetailViewController.swift */; };
 		3082F94926D1EE8C00F37ABD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3082F94826D1EE8C00F37ABD /* User.swift */; };
 		3082F94B26D1F0F900F37ABD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3082F94A26D1F0F900F37ABD /* LoginView.swift */; };
-		90C894F3542FE23C49E2189E /* Pods_mobileUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F01A2BC5CAE94CA76E73AA68 /* Pods_mobileUp.framework */; };
+		30AE537A26D23E650075C1EA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE537926D23E650075C1EA /* CollectionViewCell.swift */; };
+		30AE537E26D38F170075C1EA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE537D26D38F170075C1EA /* Photo.swift */; };
+		30AE538426D38FFD0075C1EA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE538326D38FFD0075C1EA /* Network.swift */; };
+		37BDA0FE6F8079E307304791 /* Pods_mobileUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3015CC135C257688D330D71F /* Pods_mobileUp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3015CC135C257688D330D71F /* Pods_mobileUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobileUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		305FB7D326D1E5EF006AFE65 /* mobileUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobileUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		305FB7D626D1E5EF006AFE65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		305FB7D826D1E5EF006AFE65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,11 +39,11 @@
 		3082F94626D1EA6D00F37ABD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3082F94826D1EE8C00F37ABD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3082F94A26D1F0F900F37ABD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		30C982D826D20BCE0050AAEA /* SwiftyVK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyVK.framework; path = Carthage/Build/Mac/SwiftyVK.framework; sourceTree = "<group>"; };
-		30E3323D26D208DD00AB9870 /* SwiftyVK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyVK.framework; path = Carthage/Build/iOS/SwiftyVK.framework; sourceTree = "<group>"; };
-		90373FE14C614FCD8887C7DF /* Pods-mobileUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.debug.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.debug.xcconfig"; sourceTree = "<group>"; };
-		BE15F0B3A39D13CADC43D8F2 /* Pods-mobileUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.release.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.release.xcconfig"; sourceTree = "<group>"; };
-		F01A2BC5CAE94CA76E73AA68 /* Pods_mobileUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobileUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30AE537926D23E650075C1EA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		30AE537D26D38F170075C1EA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		30AE538326D38FFD0075C1EA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		43BEC839F60FB89F293D83C4 /* Pods-mobileUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.debug.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.debug.xcconfig"; sourceTree = "<group>"; };
+		B963A2D4517542502C96905A /* Pods-mobileUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.release.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90C894F3542FE23C49E2189E /* Pods_mobileUp.framework in Frameworks */,
+				37BDA0FE6F8079E307304791 /* Pods_mobileUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +79,7 @@
 		305FB7D526D1E5EF006AFE65 /* mobileUp */ = {
 			isa = PBXGroup;
 			children = (
+				30AE538226D38FEF0075C1EA /* Network Service */,
 				3082F94126D1E81A00F37ABD /* App */,
 				3082F93F26D1E80E00F37ABD /* Controller */,
 				3082F93E26D1E80A00F37ABD /* Model */,
@@ -89,6 +94,7 @@
 			children = (
 				305FB7DC26D1E5EF006AFE65 /* Main.storyboard */,
 				3082F94A26D1F0F900F37ABD /* LoginView.swift */,
+				30AE537926D23E650075C1EA /* CollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -97,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				3082F94826D1EE8C00F37ABD /* User.swift */,
+				30AE537D26D38F170075C1EA /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,12 +138,18 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		30AE538226D38FEF0075C1EA /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				30AE538326D38FFD0075C1EA /* Network.swift */,
+			);
+			path = "Network Service";
+			sourceTree = "<group>";
+		};
 		30E3323C26D208DD00AB9870 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				30C982D826D20BCE0050AAEA /* SwiftyVK.framework */,
-				30E3323D26D208DD00AB9870 /* SwiftyVK.framework */,
-				F01A2BC5CAE94CA76E73AA68 /* Pods_mobileUp.framework */,
+				3015CC135C257688D330D71F /* Pods_mobileUp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,10 +157,9 @@
 		D685E0469002D6046E6D1457 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				90373FE14C614FCD8887C7DF /* Pods-mobileUp.debug.xcconfig */,
-				BE15F0B3A39D13CADC43D8F2 /* Pods-mobileUp.release.xcconfig */,
+				43BEC839F60FB89F293D83C4 /* Pods-mobileUp.debug.xcconfig */,
+				B963A2D4517542502C96905A /* Pods-mobileUp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -158,11 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 305FB7E726D1E5F2006AFE65 /* Build configuration list for PBXNativeTarget "mobileUp" */;
 			buildPhases = (
-				0390203E31DDB9A5F692BAF1 /* [CP] Check Pods Manifest.lock */,
+				47CA67F5F500CF756AC7BF67 /* [CP] Check Pods Manifest.lock */,
 				305FB7CF26D1E5EF006AFE65 /* Sources */,
 				305FB7D026D1E5EF006AFE65 /* Frameworks */,
 				305FB7D126D1E5EF006AFE65 /* Resources */,
-				2E59062A47D7B08F1766C709 /* [CP] Embed Pods Frameworks */,
+				C785935176BC06F3A692B62D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,7 +231,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0390203E31DDB9A5F692BAF1 /* [CP] Check Pods Manifest.lock */ = {
+		47CA67F5F500CF756AC7BF67 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -241,7 +253,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2E59062A47D7B08F1766C709 /* [CP] Embed Pods Frameworks */ = {
+		C785935176BC06F3A692B62D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,7 +279,10 @@
 			files = (
 				305FB7DB26D1E5EF006AFE65 /* LoginViewController.swift in Sources */,
 				305FB7D726D1E5EF006AFE65 /* AppDelegate.swift in Sources */,
+				30AE537A26D23E650075C1EA /* CollectionViewCell.swift in Sources */,
 				305FB7D926D1E5EF006AFE65 /* SceneDelegate.swift in Sources */,
+				30AE537E26D38F170075C1EA /* Photo.swift in Sources */,
+				30AE538426D38FFD0075C1EA /* Network.swift in Sources */,
 				3082F94726D1EA6D00F37ABD /* DetailViewController.swift in Sources */,
 				3082F94326D1E85C00F37ABD /* VKDelegate.swift in Sources */,
 				3082F94526D1E9F700F37ABD /* MainViewController.swift in Sources */,
@@ -416,55 +431,45 @@
 		};
 		305FB7E826D1E5F2006AFE65 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90373FE14C614FCD8887C7DF /* Pods-mobileUp.debug.xcconfig */;
+			baseConfigurationReference = 43BEC839F60FB89F293D83C4 /* Pods-mobileUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5C27RD34S;
-				FRAMEWORK_SEARCH_PATHS = (
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MarqueeLabel\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/NotificationBannerSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyVK\"",
 				);
 				INFOPLIST_FILE = "mobileUp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "elro-root.mobileUp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_WORKSPACE = YES;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
 		305FB7E926D1E5F2006AFE65 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE15F0B3A39D13CADC43D8F2 /* Pods-mobileUp.release.xcconfig */;
+			baseConfigurationReference = B963A2D4517542502C96905A /* Pods-mobileUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5C27RD34S;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				INFOPLIST_FILE = "mobileUp/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = "elro-root.mobileUp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_WORKSPACE = YES;
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
