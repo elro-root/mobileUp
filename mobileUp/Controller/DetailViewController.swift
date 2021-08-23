@@ -8,10 +8,19 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var photo: URL?
+    
+    private var detailView: DetailView! {
+        guard isViewLoaded else { return nil}
+        guard let view = view as? DetailView else { return nil }
+        return view
+    }
 
-    @IBOutlet weak var testingLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let data = try? Data(contentsOf: photo!)
+        self.detailView.imageView.image = UIImage(data: data!)
         // Do any additional setup after loading the view.
     }
     

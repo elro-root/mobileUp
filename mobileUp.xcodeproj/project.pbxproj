@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3018FA7726D4191F0040ECE9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3018FA7626D4191F0040ECE9 /* DetailView.swift */; };
 		305FB7D726D1E5EF006AFE65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB7D626D1E5EF006AFE65 /* AppDelegate.swift */; };
 		305FB7D926D1E5EF006AFE65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB7D826D1E5EF006AFE65 /* SceneDelegate.swift */; };
 		305FB7DB26D1E5EF006AFE65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB7DA26D1E5EF006AFE65 /* LoginViewController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		3015CC135C257688D330D71F /* Pods_mobileUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobileUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3018FA7626D4191F0040ECE9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		305FB7D326D1E5EF006AFE65 /* mobileUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobileUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		305FB7D626D1E5EF006AFE65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		305FB7D826D1E5EF006AFE65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				305FB7DC26D1E5EF006AFE65 /* Main.storyboard */,
 				3082F94A26D1F0F900F37ABD /* LoginView.swift */,
 				30AE537926D23E650075C1EA /* CollectionViewCell.swift */,
+				3018FA7626D4191F0040ECE9 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				305FB7DB26D1E5EF006AFE65 /* LoginViewController.swift in Sources */,
+				3018FA7726D4191F0040ECE9 /* DetailView.swift in Sources */,
 				305FB7D726D1E5EF006AFE65 /* AppDelegate.swift in Sources */,
 				30AE537A26D23E650075C1EA /* CollectionViewCell.swift in Sources */,
 				305FB7D926D1E5EF006AFE65 /* SceneDelegate.swift in Sources */,

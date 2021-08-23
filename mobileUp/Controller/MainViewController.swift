@@ -11,9 +11,7 @@ import SwiftyJSON
 
 class MainViewController: UICollectionViewController {
     // MARK: - Property
-    
     private let reuseIdentifier = "imageCell"
-    private let sectionInsets = UIEdgeInsets(top: 2, left: 1, bottom: 0, right: 0)
     private let itemsPerRow: CGFloat = 2
     let networkService = Network()
     var photos: [Photo]? = nil {
@@ -24,13 +22,24 @@ class MainViewController: UICollectionViewController {
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        self.collectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadLinks()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Mobile Up Gallery"
+        self.navigationController?.navigationBar.barTintColor = .white
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadLinks()
     }
     
     @IBAction func exit(_ sender: Any) {
@@ -40,25 +49,35 @@ class MainViewController: UICollectionViewController {
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(LoginViewController)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let viewController =
+                storyboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
+        guard let photos = photos else { return }
+        viewController.title = "\(photos[indexPath.row].date)"
+        viewController.photo = photos[indexPath.row].photoLink
+//        viewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return photos?.count ?? 20
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? CollectionViewCell
-        cell?.activityIndicator.startAnimating()
-        cell?.imageUrl = photos?[indexPath.row].photoLink
-        
-        return cell ?? collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        if let cell = cell as? CollectionViewCell {
+            cell.activityIndicator.startAnimating()
+            cell.imageUrl = photos?[indexPath.row].photoLink
+        }
+        return cell
     }
 }
 
@@ -87,37 +106,18 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         // 2
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let paddingSpace = CGFloat(2)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
-    
-    // 3
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        insetForSectionAt section: Int
-    ) -> UIEdgeInsets {
-        return sectionInsets
-    }
-    
     // 4
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAt section: Int
     ) -> CGFloat {
-        return sectionInsets.left
+        return CGFloat(2)
     }
-    //    5
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        minimumInteritemSpacingForSectionAt section: Int
-    ) -> CGFloat {
-        return sectionInsets.top
-    }
-    
 }

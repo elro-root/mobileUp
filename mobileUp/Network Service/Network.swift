@@ -24,7 +24,7 @@ struct Network {
                 jsonData["items"].forEach {
                     let photo = $0.1
                     photo["sizes"].forEach {
-                        if $0.1["type"] == "y" {
+                        if $0.1["type"] == "z" {
                             guard let date = photo["date"].int,
                                   let id = photo["id"].int,
                                   let url = URL(string: $0.1["url"].string ?? ""),
