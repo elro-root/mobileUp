@@ -8,16 +8,12 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-    
+
+    // MARK: - Property
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     private let cache = NSCache<NSURL, UIImage>()
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-    }
-    
+
     let networkService = Network()
     var imageUrl: URL? {
         didSet {
@@ -25,7 +21,7 @@ class CollectionViewCell: UICollectionViewCell {
             updateUI()
         }
     }
-    
+
     func updateUI() {
         if let url = imageUrl {
             activityIndicator.startAnimating()

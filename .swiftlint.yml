@@ -1,0 +1,15 @@
+excluded:
+  - Pods
+line_length:
+  - 150
+
+function_parameter_count:
+  - 10
+  - 15
+
+file_length:
+  - 500
+
+type_body_length:
+  - 400
+  - 450  

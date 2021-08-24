@@ -26,12 +26,13 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadLinks()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "Mobile Up Gallery"
@@ -40,27 +41,30 @@ class MainViewController: UIViewController {
         mainView.navigationBar.rightButton.setTitle("Выход", for: .normal)
         mainView.navigationBar.rightButton.addTarget(self, action: #selector(exit), for: .touchUpInside)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
+
     @objc func exit() {
         VK.sessions.default.logOut()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(LoginViewController)
+        let loginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?
+            .setRootViewController(loginViewController)
     }
 }
 
 // MARK: - UICollectionViewDelegate
 
 extension MainViewController: UICollectionViewDelegate {
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController =
-                storyboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
+        guard
+            let viewController =
+                storyboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController
+        else { return }
         guard let photos = photos else { return }
         viewController.title = "\(photos[indexPath.row].date)"
         let cell = mainView.collectionView.cellForItem(at: indexPath) as? CollectionViewCell
@@ -68,23 +72,23 @@ extension MainViewController: UICollectionViewDelegate {
         viewController.date = photos[indexPath.row].date
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
+
 }
 
 // MARK: UICollectionViewDataSource
 
 extension MainViewController: UICollectionViewDataSource {
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos?.count ?? 10
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         if let cell = cell as? CollectionViewCell {
             cell.activityIndicator.isHidden = false
@@ -107,7 +111,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         let paddingSpace = CGFloat(2)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
-        
+
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
     // 4
@@ -135,4 +139,3 @@ extension MainViewController {
         }
     }
 }
-

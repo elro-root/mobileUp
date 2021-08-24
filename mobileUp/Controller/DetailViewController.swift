@@ -9,16 +9,16 @@ import UIKit
 import NotificationBannerSwift
 
 class DetailViewController: UIViewController {
-    
+
     var photo: UIImage?
     var date: Int?
-    
+
     private var detailView: DetailView! {
         guard isViewLoaded else { return nil}
         guard let view = view as? DetailView else { return nil }
         return view
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         detailView.imageView.image = photo
@@ -32,17 +32,16 @@ class DetailViewController: UIViewController {
         detailView.navigationBar.leftButton.setImage(UIImage(named: "backButton"), for: .normal)
         detailView.navigationBar.leftButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
     }
-    
+
     @objc func backButton() {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
     @objc func shareButton() {
         let shareController = UIActivityViewController(
             activityItems: [photo!],
             applicationActivities: nil)
-        shareController.popoverPresentationController?.permittedArrowDirections = .any
-        shareController.completionWithItemsHandler = { (activity, success, items, error) in
+        shareController.completionWithItemsHandler = { (activity, success, _, error) in
             guard let activity = activity else { return }
             switch activity {
             case .saveToCameraRoll:
@@ -65,7 +64,7 @@ class DetailViewController: UIViewController {
         }
         present(shareController, animated: true, completion: nil)
     }
-    
+
     func convertDate(unixtime date: Int) -> String {
         let date = NSDate(timeIntervalSince1970: TimeInterval(date))
         let dateFormatter = DateFormatter()
@@ -75,16 +74,4 @@ class DetailViewController: UIViewController {
         let localDate = dateFormatter.string(from: date as Date)
         return localDate
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

@@ -4,11 +4,12 @@
 //
 //  Created by Patrik Duksin on 22.08.2021.
 //
+// swiftlint:disable all
 
 import UIKit
 import SwiftyVK
 
-var vkDelegate : SwiftyVKDelegate?
+var vkDelegate: SwiftyVKDelegate?
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +33,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
 }
-

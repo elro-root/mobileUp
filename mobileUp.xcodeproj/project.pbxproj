@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,7 +25,7 @@
 		30AE537A26D23E650075C1EA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE537926D23E650075C1EA /* CollectionViewCell.swift */; };
 		30AE537E26D38F170075C1EA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE537D26D38F170075C1EA /* Photo.swift */; };
 		30AE538426D38FFD0075C1EA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE538326D38FFD0075C1EA /* Network.swift */; };
-		FFD1FE1DCDCE9A47C5AE5582 /* Pods_mobileUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55898FCF8B2A47078135AB8 /* Pods_mobileUp.framework */; };
+		4B4414C69A08E8EE5267C76F /* Pods_mobileUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2B397817C663E98BD15729 /* Pods_mobileUp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,9 +49,9 @@
 		30AE537926D23E650075C1EA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		30AE537D26D38F170075C1EA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		30AE538326D38FFD0075C1EA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		45D42BD2E43EDC575593481A /* Pods-mobileUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.debug.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.debug.xcconfig"; sourceTree = "<group>"; };
-		C55898FCF8B2A47078135AB8 /* Pods_mobileUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobileUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6A0D52D2C8FFBCE35105CF7 /* Pods-mobileUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.release.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.release.xcconfig"; sourceTree = "<group>"; };
+		3A2B397817C663E98BD15729 /* Pods_mobileUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobileUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85F5F19D15A105E14509B3DF /* Pods-mobileUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.debug.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.debug.xcconfig"; sourceTree = "<group>"; };
+		A6AFF31903C71E6CF3D0606F /* Pods-mobileUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.release.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFD1FE1DCDCE9A47C5AE5582 /* Pods_mobileUp.framework in Frameworks */,
+				4B4414C69A08E8EE5267C76F /* Pods_mobileUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,8 +80,8 @@
 			children = (
 				305FB7D526D1E5EF006AFE65 /* mobileUp */,
 				305FB7D426D1E5EF006AFE65 /* Products */,
-				D685E0469002D6046E6D1457 /* Pods */,
-				DB4796E50DA9A168B73F1F7E /* Frameworks */,
+				8C08FB52053F95E55B480615 /* Pods */,
+				62B3F06339EB8A693A0A90ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,21 +166,22 @@
 			path = "Network Service";
 			sourceTree = "<group>";
 		};
-		D685E0469002D6046E6D1457 /* Pods */ = {
+		62B3F06339EB8A693A0A90ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				45D42BD2E43EDC575593481A /* Pods-mobileUp.debug.xcconfig */,
-				C6A0D52D2C8FFBCE35105CF7 /* Pods-mobileUp.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		DB4796E50DA9A168B73F1F7E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C55898FCF8B2A47078135AB8 /* Pods_mobileUp.framework */,
+				3A2B397817C663E98BD15729 /* Pods_mobileUp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C08FB52053F95E55B480615 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85F5F19D15A105E14509B3DF /* Pods-mobileUp.debug.xcconfig */,
+				A6AFF31903C71E6CF3D0606F /* Pods-mobileUp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,11 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 305FB7E726D1E5F2006AFE65 /* Build configuration list for PBXNativeTarget "mobileUp" */;
 			buildPhases = (
-				A6E5623159195E2B3EF2C8E6 /* [CP] Check Pods Manifest.lock */,
+				FD9008035CD57041ACACC79A /* [CP] Check Pods Manifest.lock */,
 				305FB7CF26D1E5EF006AFE65 /* Sources */,
 				305FB7D026D1E5EF006AFE65 /* Frameworks */,
 				305FB7D126D1E5EF006AFE65 /* Resources */,
-				5C5DB7845FD2D62CFD98147A /* [CP] Embed Pods Frameworks */,
+				3018FA8126D58CF70040ECE9 /* ShellScript */,
+				3A96FED1F7C5765303C75BA9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,7 +254,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5C5DB7845FD2D62CFD98147A /* [CP] Embed Pods Frameworks */ = {
+		3018FA8126D58CF70040ECE9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+		3A96FED1F7C5765303C75BA9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,7 +288,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mobileUp/Pods-mobileUp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A6E5623159195E2B3EF2C8E6 /* [CP] Check Pods Manifest.lock */ = {
+		FD9008035CD57041ACACC79A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -455,7 +474,7 @@
 		};
 		305FB7E826D1E5F2006AFE65 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45D42BD2E43EDC575593481A /* Pods-mobileUp.debug.xcconfig */;
+			baseConfigurationReference = 85F5F19D15A105E14509B3DF /* Pods-mobileUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -481,7 +500,7 @@
 		};
 		305FB7E926D1E5F2006AFE65 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6A0D52D2C8FFBCE35105CF7 /* Pods-mobileUp.release.xcconfig */;
+			baseConfigurationReference = A6AFF31903C71E6CF3D0606F /* Pods-mobileUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

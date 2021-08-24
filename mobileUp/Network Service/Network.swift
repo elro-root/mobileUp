@@ -11,10 +11,10 @@ import SwiftyJSON
 import SwiftyVK
 
 struct Network {
-    func getData(completionHandler: @escaping (([Photo]?, UIAlertController? ) -> ())) {
+    func getData(completionHandler: @escaping (([Photo]?, UIAlertController? ) -> Void)) {
         VK.API.Photos.get([
             .ownerId: "-128666765",
-            .albumId: "266276915",
+            .albumId: "266276915"
         ])
         .configure(with: Config(apiVersion: "5.77"))
         .onSuccess { data in
@@ -26,24 +26,36 @@ struct Network {
                     photo["sizes"].forEach {
                         if $0.1["type"] == "z" {
                             guard let date = photo["date"].int,
-                                  let id = photo["id"].int,
+                                  let identifier = photo["id"].int,
                                   let url = URL(string: $0.1["url"].string ?? "")
                             else { return }
-                            photos.append(Photo(photoId: id, photoLink: url, date: date))
+                            photos.append(Photo(photoId: identifier, photoLink: url, date: date))
                         }
                     }
                 }
                 completionHandler(photos, nil)
             } catch {
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+                let alert = UIAlertController(
+                    title: "Error",
+                    message: error.localizedDescription,
+                    preferredStyle: .alert
+                )
+                alert.addAction(
+                    UIAlertAction(
+                        title: NSLocalizedString("OK", comment: "Default action"),
+                        style: .default, handler: nil)
+                )
                 completionHandler(nil, alert)
-                
+
             }
         }
         .onError { error in
             let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            alert.addAction(
+                UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
+                              style: .default,
+                              handler: nil)
+            )
             completionHandler(nil, alert)
         }
         .send()
