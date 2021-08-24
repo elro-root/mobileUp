@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBar" customModule="mobileUp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="SXn-0I-urL"/>
+                <outlet property="leftButton" destination="KMi-B8-7vE" id="x2y-91-hCX"/>
+                <outlet property="rightButton" destination="5kO-lw-Al0" id="0vI-E5-YZp"/>
+                <outlet property="titleLabel" destination="lQX-W2-8fv" id="gbB-fR-w2u"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQX-W2-8fv">
+                    <rect key="frame" x="183.66666666666666" y="39.666666666666664" width="46" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <color key="textColor" name="AccentColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMi-B8-7vE">
+                    <rect key="frame" x="12" y="33" width="60" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="gfp-b7-faV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <state key="normal">
+                        <color key="titleColor" name="AccentColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kO-lw-Al0">
+                    <rect key="frame" x="341" y="33" width="60" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="ygR-TP-684"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <state key="normal">
+                        <color key="titleColor" name="AccentColor"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="5kO-lw-Al0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BOc-pG-AsI"/>
+                <constraint firstItem="KMi-B8-7vE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="Ocs-su-QbW"/>
+                <constraint firstItem="KMi-B8-7vE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PCA-Fc-tDh"/>
+                <constraint firstItem="lQX-W2-8fv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Rea-Z1-Mri"/>
+                <constraint firstAttribute="trailing" secondItem="5kO-lw-Al0" secondAttribute="trailing" constant="12" id="Sgd-jW-iF5"/>
+                <constraint firstItem="lQX-W2-8fv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tWL-jk-RdV"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="138.40000000000001" y="93.103448275862078"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

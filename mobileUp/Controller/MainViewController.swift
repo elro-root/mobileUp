@@ -9,22 +9,24 @@ import UIKit
 import SwiftyVK
 import SwiftyJSON
 
-class MainViewController: UICollectionViewController {
+class MainViewController: UIViewController {
     // MARK: - Property
+    
+    private var mainView: MainView! {
+        guard isViewLoaded else { return nil}
+        guard let view = view as? MainView else { return nil }
+        return view
+    }
+    
     private let reuseIdentifier = "imageCell"
     private let itemsPerRow: CGFloat = 2
     let networkService = Network()
     var photos: [Photo]? = nil {
         didSet {
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
+                self.mainView.collectionView.reloadData()
             }
         }
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        self.collectionView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -35,65 +37,61 @@ class MainViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "Mobile Up Gallery"
-        self.navigationController?.navigationBar.barTintColor = .white
+        mainView.navigationBar.titleLabel.text = self.title
+        mainView.navigationBar.leftButton.isHidden = true
+        mainView.navigationBar.rightButton.setTitle("Выход", for: .normal)
+        mainView.navigationBar.rightButton.addTarget(self, action: #selector(exit), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    @IBAction func exit(_ sender: Any) {
+    @objc func exit() {
         VK.sessions.default.logOut()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(LoginViewController)
     }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension MainViewController: UICollectionViewDelegate {
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let viewController =
                 storyboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
         guard let photos = photos else { return }
         viewController.title = "\(photos[indexPath.row].date)"
-        viewController.photo = photos[indexPath.row].photoLink
-//        viewController.modalPresentationStyle = .fullScreen
+        viewController.photo = photos[indexPath.row].photo
+        viewController.date = photos[indexPath.row].date
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    // MARK: UICollectionViewDataSource
+}
+
+// MARK: UICollectionViewDataSource
+
+extension MainViewController: UICollectionViewDataSource {
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos?.count ?? 20
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos?.count ?? 10
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         if let cell = cell as? CollectionViewCell {
             cell.activityIndicator.startAnimating()
             cell.imageUrl = photos?[indexPath.row].photoLink
         }
         return cell
-    }
-}
-
-// MARK: - Network
-
-extension MainViewController {
-    func loadLinks() {
-        networkService.getData { [weak self] photos, alert in
-            if let photos = photos {
-                self?.photos = photos
-            } else if let alert = alert {
-                DispatchQueue.main.async {
-                    self?.present(alert, animated: true, completion: nil)
-                }
-            }
-        }
     }
 }
 
@@ -121,3 +119,20 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         return CGFloat(2)
     }
 }
+
+// MARK: - Network
+
+extension MainViewController {
+    func loadLinks() {
+        networkService.getData { [weak self] photos, alert in
+            if let photos = photos {
+                self?.photos = photos
+            } else if let alert = alert {
+                DispatchQueue.main.async {
+                    self?.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+}
+

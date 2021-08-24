@@ -9,4 +9,5 @@ import UIKit
 
 class DetailView: UIView {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var navigationBar: NavigationBar!
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3018FA7726D4191F0040ECE9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3018FA7626D4191F0040ECE9 /* DetailView.swift */; };
+		3018FA7B26D52AB60040ECE9 /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3018FA7A26D52AB60040ECE9 /* NavigationBar.xib */; };
+		3018FA7E26D54D050040ECE9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3018FA7D26D54D050040ECE9 /* MainView.swift */; };
+		3018FA8026D55F4C0040ECE9 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3018FA7F26D55F4C0040ECE9 /* NavigationBar.swift */; };
 		305FB7D726D1E5EF006AFE65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB7D626D1E5EF006AFE65 /* AppDelegate.swift */; };
 		305FB7D926D1E5EF006AFE65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB7D826D1E5EF006AFE65 /* SceneDelegate.swift */; };
 		305FB7DB26D1E5EF006AFE65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB7DA26D1E5EF006AFE65 /* LoginViewController.swift */; };
@@ -22,12 +25,14 @@
 		30AE537A26D23E650075C1EA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE537926D23E650075C1EA /* CollectionViewCell.swift */; };
 		30AE537E26D38F170075C1EA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE537D26D38F170075C1EA /* Photo.swift */; };
 		30AE538426D38FFD0075C1EA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE538326D38FFD0075C1EA /* Network.swift */; };
-		37BDA0FE6F8079E307304791 /* Pods_mobileUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3015CC135C257688D330D71F /* Pods_mobileUp.framework */; };
+		FFD1FE1DCDCE9A47C5AE5582 /* Pods_mobileUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55898FCF8B2A47078135AB8 /* Pods_mobileUp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3015CC135C257688D330D71F /* Pods_mobileUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobileUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3018FA7626D4191F0040ECE9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3018FA7A26D52AB60040ECE9 /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
+		3018FA7D26D54D050040ECE9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3018FA7F26D55F4C0040ECE9 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		305FB7D326D1E5EF006AFE65 /* mobileUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobileUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		305FB7D626D1E5EF006AFE65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		305FB7D826D1E5EF006AFE65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,8 +49,9 @@
 		30AE537926D23E650075C1EA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		30AE537D26D38F170075C1EA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		30AE538326D38FFD0075C1EA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		43BEC839F60FB89F293D83C4 /* Pods-mobileUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.debug.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.debug.xcconfig"; sourceTree = "<group>"; };
-		B963A2D4517542502C96905A /* Pods-mobileUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.release.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.release.xcconfig"; sourceTree = "<group>"; };
+		45D42BD2E43EDC575593481A /* Pods-mobileUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.debug.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.debug.xcconfig"; sourceTree = "<group>"; };
+		C55898FCF8B2A47078135AB8 /* Pods_mobileUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobileUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6A0D52D2C8FFBCE35105CF7 /* Pods-mobileUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileUp.release.xcconfig"; path = "Target Support Files/Pods-mobileUp/Pods-mobileUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,20 +59,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37BDA0FE6F8079E307304791 /* Pods_mobileUp.framework in Frameworks */,
+				FFD1FE1DCDCE9A47C5AE5582 /* Pods_mobileUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3018FA7C26D54C870040ECE9 /* Navigation Bar */ = {
+			isa = PBXGroup;
+			children = (
+				3018FA7A26D52AB60040ECE9 /* NavigationBar.xib */,
+				3018FA7F26D55F4C0040ECE9 /* NavigationBar.swift */,
+			);
+			path = "Navigation Bar";
+			sourceTree = "<group>";
+		};
 		305FB7CA26D1E5EF006AFE65 = {
 			isa = PBXGroup;
 			children = (
 				305FB7D526D1E5EF006AFE65 /* mobileUp */,
 				305FB7D426D1E5EF006AFE65 /* Products */,
-				30E3323C26D208DD00AB9870 /* Frameworks */,
 				D685E0469002D6046E6D1457 /* Pods */,
+				DB4796E50DA9A168B73F1F7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,10 +109,12 @@
 		3082F93D26D1E80600F37ABD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3018FA7C26D54C870040ECE9 /* Navigation Bar */,
 				305FB7DC26D1E5EF006AFE65 /* Main.storyboard */,
 				3082F94A26D1F0F900F37ABD /* LoginView.swift */,
 				30AE537926D23E650075C1EA /* CollectionViewCell.swift */,
 				3018FA7626D4191F0040ECE9 /* DetailView.swift */,
+				3018FA7D26D54D050040ECE9 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,21 +166,21 @@
 			path = "Network Service";
 			sourceTree = "<group>";
 		};
-		30E3323C26D208DD00AB9870 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3015CC135C257688D330D71F /* Pods_mobileUp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D685E0469002D6046E6D1457 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				43BEC839F60FB89F293D83C4 /* Pods-mobileUp.debug.xcconfig */,
-				B963A2D4517542502C96905A /* Pods-mobileUp.release.xcconfig */,
+				45D42BD2E43EDC575593481A /* Pods-mobileUp.debug.xcconfig */,
+				C6A0D52D2C8FFBCE35105CF7 /* Pods-mobileUp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DB4796E50DA9A168B73F1F7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C55898FCF8B2A47078135AB8 /* Pods_mobileUp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,11 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 305FB7E726D1E5F2006AFE65 /* Build configuration list for PBXNativeTarget "mobileUp" */;
 			buildPhases = (
-				47CA67F5F500CF756AC7BF67 /* [CP] Check Pods Manifest.lock */,
+				A6E5623159195E2B3EF2C8E6 /* [CP] Check Pods Manifest.lock */,
 				305FB7CF26D1E5EF006AFE65 /* Sources */,
 				305FB7D026D1E5EF006AFE65 /* Frameworks */,
 				305FB7D126D1E5EF006AFE65 /* Resources */,
-				C785935176BC06F3A692B62D /* [CP] Embed Pods Frameworks */,
+				5C5DB7845FD2D62CFD98147A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -228,13 +245,31 @@
 				305FB7E326D1E5F2006AFE65 /* LaunchScreen.storyboard in Resources */,
 				305FB7E026D1E5F2006AFE65 /* Assets.xcassets in Resources */,
 				305FB7DE26D1E5EF006AFE65 /* Main.storyboard in Resources */,
+				3018FA7B26D52AB60040ECE9 /* NavigationBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		47CA67F5F500CF756AC7BF67 /* [CP] Check Pods Manifest.lock */ = {
+		5C5DB7845FD2D62CFD98147A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mobileUp/Pods-mobileUp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mobileUp/Pods-mobileUp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mobileUp/Pods-mobileUp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6E5623159195E2B3EF2C8E6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,23 +291,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C785935176BC06F3A692B62D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mobileUp/Pods-mobileUp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mobileUp/Pods-mobileUp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mobileUp/Pods-mobileUp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -281,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				305FB7DB26D1E5EF006AFE65 /* LoginViewController.swift in Sources */,
+				3018FA7E26D54D050040ECE9 /* MainView.swift in Sources */,
 				3018FA7726D4191F0040ECE9 /* DetailView.swift in Sources */,
 				305FB7D726D1E5EF006AFE65 /* AppDelegate.swift in Sources */,
 				30AE537A26D23E650075C1EA /* CollectionViewCell.swift in Sources */,
@@ -290,6 +309,7 @@
 				3082F94726D1EA6D00F37ABD /* DetailViewController.swift in Sources */,
 				3082F94326D1E85C00F37ABD /* VKDelegate.swift in Sources */,
 				3082F94526D1E9F700F37ABD /* MainViewController.swift in Sources */,
+				3018FA8026D55F4C0040ECE9 /* NavigationBar.swift in Sources */,
 				3082F94B26D1F0F900F37ABD /* LoginView.swift in Sources */,
 				3082F94926D1EE8C00F37ABD /* User.swift in Sources */,
 			);
@@ -435,7 +455,7 @@
 		};
 		305FB7E826D1E5F2006AFE65 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43BEC839F60FB89F293D83C4 /* Pods-mobileUp.debug.xcconfig */;
+			baseConfigurationReference = 45D42BD2E43EDC575593481A /* Pods-mobileUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -454,14 +474,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "elro-root.mobileUp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
 		305FB7E926D1E5F2006AFE65 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B963A2D4517542502C96905A /* Pods-mobileUp.release.xcconfig */;
+			baseConfigurationReference = C6A0D52D2C8FFBCE35105CF7 /* Pods-mobileUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -472,7 +492,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "elro-root.mobileUp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;

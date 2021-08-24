@@ -18,17 +18,19 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginView.loginButton.layer.cornerRadius = 16
+        loginView.loginButton.layer.cornerRadius = 8
         // Do any additional setup after loading the view.
     }
     
     @IBAction func loginButton(_ sender: Any) {
         VK.sessions.default.logIn(
             onSuccess: { _ in
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 DispatchQueue.main.async {
-                    let viewController = storyboard.instantiateViewController(identifier: "main") as! UINavigationController
-                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(viewController)
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let viewController = storyBoard.instantiateViewController(identifier: "MainViewController") as! MainViewController
+                    let navigationViewController = UINavigationController(rootViewController: viewController)
+                    navigationViewController.navigationBar.isHidden = true
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(navigationViewController)
                 }
             }, onError: { error in
                 DispatchQueue.main.async {
