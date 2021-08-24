@@ -8,6 +8,7 @@ import UIKit
 
 struct Photo {
     var photoId: Int
-    var photoLink: URL
+    var previewPhotoLink: URL
+    var bigPhotoLink: URL
     var date: Int
 }

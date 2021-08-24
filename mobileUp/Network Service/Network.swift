@@ -16,48 +16,58 @@ struct Network {
             .ownerId: "-128666765",
             .albumId: "266276915"
         ])
-        .configure(with: Config(apiVersion: "5.77"))
-        .onSuccess { data in
-            do {
-                let jsonData = try JSON(data: data)
-                var photos: [Photo] = []
-                jsonData["items"].forEach {
-                    let photo = $0.1
-                    photo["sizes"].forEach {
-                        if $0.1["type"] == "z" {
-                            guard let date = photo["date"].int,
-                                  let identifier = photo["id"].int,
-                                  let url = URL(string: $0.1["url"].string ?? "")
+            .configure(with: Config(apiVersion: "5.77"))
+            .onSuccess { data in
+                do {
+                    let jsonData = try JSON(data: data)
+                    var photos: [Photo] = []
+                    jsonData["items"].forEach {
+                        let photo = $0.1
+                        guard let date = photo["date"].int,
+                              let identifier = photo["id"].int
+                        else { return }
+                        var previewUrl = URL(string: "")
+                        var bigUrl = URL(string: "")
+                        photo["sizes"].forEach {
+                            if $0.1["type"] == "x" {
+                                guard let url = URL(string: $0.1["url"].string ?? "") else { return }
+                                previewUrl = url
+                            } else if $0.1["type"] == "w" {
+                                guard let url = URL(string: $0.1["url"].string ?? "") else { return }
+                                bigUrl = url
+                            }
+                            guard
+                                let bigUrl = bigUrl,
+                                let previewUrl = previewUrl
                             else { return }
-                            photos.append(Photo(photoId: identifier, photoLink: url, date: date))
+                            photos.append(Photo(photoId: identifier, previewPhotoLink: previewUrl, bigPhotoLink: bigUrl, date: date))
                         }
                     }
+                    completionHandler(photos, nil)
+                } catch {
+                    let alert = UIAlertController(
+                        title: "Error",
+                        message: error.localizedDescription,
+                        preferredStyle: .alert
+                    )
+                    alert.addAction(
+                        UIAlertAction(
+                            title: NSLocalizedString("OK", comment: "Default action"),
+                            style: .default, handler: nil)
+                    )
+                    completionHandler(nil, alert)
+
                 }
-                completionHandler(photos, nil)
-            } catch {
-                let alert = UIAlertController(
-                    title: "Error",
-                    message: error.localizedDescription,
-                    preferredStyle: .alert
-                )
+            }
+            .onError { error in
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                 alert.addAction(
-                    UIAlertAction(
-                        title: NSLocalizedString("OK", comment: "Default action"),
-                        style: .default, handler: nil)
+                    UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
+                                  style: .default,
+                                  handler: nil)
                 )
                 completionHandler(nil, alert)
-
             }
-        }
-        .onError { error in
-            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-            alert.addAction(
-                UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"),
-                              style: .default,
-                              handler: nil)
-            )
-            completionHandler(nil, alert)
-        }
-        .send()
+            .send()
     }
 }

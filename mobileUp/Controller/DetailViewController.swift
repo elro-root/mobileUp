@@ -10,8 +10,9 @@ import NotificationBannerSwift
 
 class DetailViewController: UIViewController {
 
-    var photo: UIImage?
+    var preview: UIImage?
     var date: Int?
+    var url: URL?
 
     private var detailView: DetailView! {
         guard isViewLoaded else { return nil}
@@ -21,7 +22,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailView.imageView.image = photo
+        detailView.imageView.image = preview
         if let date = date {
             detailView.navigationBar.titleLabel.text = convertDate(unixtime: date)
         } else {
@@ -33,13 +34,26 @@ class DetailViewController: UIViewController {
         detailView.navigationBar.leftButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            guard
+                let url = self.url,
+                let content = try? Data(contentsOf: url)
+            else { return }
+            let image = UIImage(data: content)
+            DispatchQueue.main.async {
+                self.detailView.imageView.image = image
+            }
+        }
+    }
+
     @objc func backButton() {
         self.navigationController?.popViewController(animated: true)
     }
 
     @objc func shareButton() {
         let shareController = UIActivityViewController(
-            activityItems: [photo!],
+            activityItems: [preview!],
             applicationActivities: nil)
         shareController.completionWithItemsHandler = { (activity, success, _, error) in
             guard let activity = activity else { return }

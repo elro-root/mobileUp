@@ -24,12 +24,12 @@ class MainViewController: UIViewController {
             DispatchQueue.main.async {
                 self.mainView.collectionView.reloadData()
             }
+            print(photos?[0], photos?[1])
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadLinks()
     }
 
@@ -68,7 +68,8 @@ extension MainViewController: UICollectionViewDelegate {
         guard let photos = photos else { return }
         viewController.title = "\(photos[indexPath.row].date)"
         let cell = mainView.collectionView.cellForItem(at: indexPath) as? CollectionViewCell
-        viewController.photo = cell?.imageView.image
+        viewController.preview = cell?.imageView.image
+        viewController.url = photos[indexPath.row].bigPhotoLink
         viewController.date = photos[indexPath.row].date
         self.navigationController?.pushViewController(viewController, animated: true)
     }
@@ -93,7 +94,7 @@ extension MainViewController: UICollectionViewDataSource {
         if let cell = cell as? CollectionViewCell {
             cell.activityIndicator.isHidden = false
             cell.activityIndicator.startAnimating()
-            cell.imageUrl = photos?[indexPath.row].photoLink
+            cell.imageUrl = photos?[indexPath.row].previewPhotoLink
         }
         return cell
     }
