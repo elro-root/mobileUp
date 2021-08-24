@@ -7,7 +7,6 @@
 import UIKit
 
 struct Photo {
-    var photo: UIImage
     var photoId: Int
     var photoLink: URL
     var date: Int

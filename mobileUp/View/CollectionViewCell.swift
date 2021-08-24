@@ -11,8 +11,14 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    private let cache = NSCache<NSURL, UIImage>()
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+    }
+    
     let networkService = Network()
-//    var links: [Photo]? = nil
     var imageUrl: URL? {
         didSet {
             imageView?.image = nil
@@ -27,10 +33,19 @@ class CollectionViewCell: UICollectionViewCell {
                 let contentsOfUrl = try? Data(contentsOf: url)
                 DispatchQueue.main.async {
                     if url == self.imageUrl {
-                        if let imageData = contentsOfUrl {
-                            self.imageView.image = UIImage(data: imageData)
+                        guard let uri = NSURL(string: "\(url)") else { return }
+                        if let cachedImage = self.cache.object(forKey: uri) {
+                            self.imageView.image = cachedImage
                             self.activityIndicator.stopAnimating()
                             self.activityIndicator.isHidden = true
+                        } else if let imageData = contentsOfUrl {
+                            guard let image = UIImage(data: imageData) else { return }
+                            self.imageView.image = image
+                            self.activityIndicator.stopAnimating()
+                            self.activityIndicator.isHidden = true
+                            DispatchQueue.global(qos: .utility).async {
+                                self.cache.setObject(image, forKey: uri)
+                            }
                         }
                     }
                 }

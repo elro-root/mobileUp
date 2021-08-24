@@ -11,13 +11,11 @@ import SwiftyJSON
 
 class MainViewController: UIViewController {
     // MARK: - Property
-    
     private var mainView: MainView! {
         guard isViewLoaded else { return nil}
         guard let view = view as? MainView else { return nil }
         return view
     }
-    
     private let reuseIdentifier = "imageCell"
     private let itemsPerRow: CGFloat = 2
     let networkService = Network()
@@ -65,7 +63,8 @@ extension MainViewController: UICollectionViewDelegate {
                 storyboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
         guard let photos = photos else { return }
         viewController.title = "\(photos[indexPath.row].date)"
-        viewController.photo = photos[indexPath.row].photo
+        let cell = mainView.collectionView.cellForItem(at: indexPath) as? CollectionViewCell
+        viewController.photo = cell?.imageView.image
         viewController.date = photos[indexPath.row].date
         self.navigationController?.pushViewController(viewController, animated: true)
     }
@@ -88,6 +87,7 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         if let cell = cell as? CollectionViewCell {
+            cell.activityIndicator.isHidden = false
             cell.activityIndicator.startAnimating()
             cell.imageUrl = photos?[indexPath.row].photoLink
         }

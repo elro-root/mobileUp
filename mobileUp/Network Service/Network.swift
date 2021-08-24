@@ -27,10 +27,9 @@ struct Network {
                         if $0.1["type"] == "z" {
                             guard let date = photo["date"].int,
                                   let id = photo["id"].int,
-                                  let url = URL(string: $0.1["url"].string ?? ""),
-                                  let contentsOfUrl = try? Data(contentsOf: url),
-                                  let photo = UIImage(data: contentsOfUrl) else { return }
-                            photos.append(Photo(photo: photo, photoId: id, photoLink: url, date: date))
+                                  let url = URL(string: $0.1["url"].string ?? "")
+                            else { return }
+                            photos.append(Photo(photoId: id, photoLink: url, date: date))
                         }
                     }
                 }
