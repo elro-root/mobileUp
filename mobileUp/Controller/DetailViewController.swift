@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Foundation
 
 class DetailViewController: UIViewController {
     
-    var photo: URL?
+    var photo: UIImage?
+    var date: Int?
     
     private var detailView: DetailView! {
         guard isViewLoaded else { return nil}
@@ -19,9 +21,30 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let data = try? Data(contentsOf: photo!)
-        self.detailView.imageView.image = UIImage(data: data!)
-        // Do any additional setup after loading the view.
+        detailView.imageView.image = photo
+        if let date = date {
+            detailView.navigationBar.titleLabel.text = convertDate(unixtime: date)
+        } else {
+            detailView.navigationBar.titleLabel.text = ""
+        }
+        detailView.navigationBar.rightButton.setImage(UIImage(named: "shareButton"), for: .normal)
+        detailView.navigationBar.leftButton.setImage(UIImage(named: "backButton"), for: .normal)
+        detailView.navigationBar.leftButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
+    }
+    
+    @objc func backButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func convertDate(unixtime date: Int) -> String {
+        let date = NSDate(timeIntervalSince1970: TimeInterval(date))
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_Ru")
+        dateFormatter.dateFormat = "dd MMMM yy"
+        dateFormatter.dateStyle = DateFormatter.Style.long
+        dateFormatter.timeZone = NSTimeZone() as TimeZone
+        let localDate = dateFormatter.string(from: date as Date)
+        return localDate
     }
     
 
