@@ -53,7 +53,7 @@ class DetailViewController: UIViewController {
 
     @objc func shareButton() {
         let shareController = UIActivityViewController(
-            activityItems: [preview!],
+            activityItems: [detailView.imageView.image!],
             applicationActivities: nil)
         shareController.completionWithItemsHandler = { (activity, success, _, error) in
             guard let activity = activity else { return }
