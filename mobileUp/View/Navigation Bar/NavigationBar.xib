@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMi-B8-7vE">
-                    <rect key="frame" x="12" y="33" width="60" height="34"/>
+                    <rect key="frame" x="12" y="0.0" width="60" height="100"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="gfp-b7-faV"/>
                     </constraints>
@@ -40,7 +40,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kO-lw-Al0">
-                    <rect key="frame" x="341" y="33" width="60" height="34"/>
+                    <rect key="frame" x="341" y="0.0" width="60" height="100"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="ygR-TP-684"/>
                     </constraints>
@@ -54,11 +54,15 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="5kO-lw-Al0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BOc-pG-AsI"/>
+                <constraint firstItem="KMi-B8-7vE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GPC-L9-PbD"/>
+                <constraint firstAttribute="bottom" secondItem="5kO-lw-Al0" secondAttribute="bottom" id="IoQ-69-GrZ"/>
                 <constraint firstItem="KMi-B8-7vE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="Ocs-su-QbW"/>
                 <constraint firstItem="KMi-B8-7vE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PCA-Fc-tDh"/>
                 <constraint firstItem="lQX-W2-8fv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Rea-Z1-Mri"/>
                 <constraint firstAttribute="trailing" secondItem="5kO-lw-Al0" secondAttribute="trailing" constant="12" id="Sgd-jW-iF5"/>
+                <constraint firstAttribute="bottom" secondItem="KMi-B8-7vE" secondAttribute="bottom" id="Yjl-Md-lYK"/>
                 <constraint firstItem="lQX-W2-8fv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tWL-jk-RdV"/>
+                <constraint firstItem="5kO-lw-Al0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yTn-94-GeH"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
