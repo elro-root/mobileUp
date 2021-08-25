@@ -57,16 +57,18 @@ class DetailViewController: UIViewController {
             applicationActivities: nil)
         shareController.completionWithItemsHandler = { (activity, success, _, error) in
             guard let activity = activity else { return }
+            var banner = FloatingNotificationBanner()
             switch activity {
             case .saveToCameraRoll:
                 if let error = error {
-                    FloatingNotificationBanner(
+                    banner = FloatingNotificationBanner(
                         title: "Фотография не сохранена",
                         subtitle: error.localizedDescription,
                         style: .warning
-                    ).show()
+                    )
+                    banner.show()
                 } else {
-                     let banner = FloatingNotificationBanner(
+                    banner = FloatingNotificationBanner(
                         title: "Фотография успешно сохранена",
                         style: .success
                     )
@@ -74,6 +76,9 @@ class DetailViewController: UIViewController {
                 }
             default:
                 print("")
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                banner.dismiss()
             }
         }
         present(shareController, animated: true, completion: nil)

@@ -59,7 +59,6 @@ struct Network {
                     style: .default, handler: nil)
             )
             completionHandler(nil, alert)
-            
         }
     }
     .onError { error in

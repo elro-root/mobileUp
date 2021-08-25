@@ -24,7 +24,6 @@ class MainViewController: UIViewController {
             DispatchQueue.main.async {
                 self.mainView.collectionView.reloadData()
             }
-            print(photos?[0], photos?[1])
         }
     }
 
