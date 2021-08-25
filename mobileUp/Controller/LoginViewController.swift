@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButton(_ sender: Any) {
+        loginView.loginButton.animate(sender: sender as! UIButton)
+        // swiftlint:disable:previous force_cast
         VK.sessions.default.logIn(
             onSuccess: { _ in
                 DispatchQueue.main.async {

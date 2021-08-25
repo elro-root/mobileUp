@@ -11,7 +11,7 @@ import UIKit
 final class VKDelegate: SwiftyVKDelegate {
 
     let appId = "7932464"
-    let scopes: Scopes = [.email]
+    let scopes: Scopes = [.email, .offline]
 
     init() {
         VK.setUp(appId: appId, delegate: self)
