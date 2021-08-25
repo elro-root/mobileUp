@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,6 +33,7 @@
 		3018FA7A26D52AB60040ECE9 /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		3018FA7D26D54D050040ECE9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3018FA7F26D55F4C0040ECE9 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		3022681526D652C000EDFE9B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		305FB7D326D1E5EF006AFE65 /* mobileUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mobileUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		305FB7D626D1E5EF006AFE65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		305FB7D826D1E5EF006AFE65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		305FB7CA26D1E5EF006AFE65 = {
 			isa = PBXGroup;
 			children = (
+				3022681526D652C000EDFE9B /* README.md */,
 				305FB7D526D1E5EF006AFE65 /* mobileUp */,
 				305FB7D426D1E5EF006AFE65 /* Products */,
 				8C08FB52053F95E55B480615 /* Pods */,
@@ -180,7 +182,6 @@
 				85F5F19D15A105E14509B3DF /* Pods-mobileUp.debug.xcconfig */,
 				A6AFF31903C71E6CF3D0606F /* Pods-mobileUp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
